@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  AGENDA SOLO - Landing Page (versão alta conversão)
+  ----------------------------------------------------------------------------
+  Arquivos:
+    - index.html  -> conteúdo (este arquivo)
+    - estilos.css -> aparência
+    - script.js   -> comportamentos (menu, FAQ, formulário, animações)
+
+  Cada seção está marcada com um comentário "SEÇÃO: ..." para localização
+  rápida. Tudo em português, código modular para manutenção por dev junior.
+  ============================================================================
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quanta — Agenda online e Pix anti-calote para profissionais autônomos</title>
+  <meta
+    name="description"
+    content="Quanta é o sistema de agendamento online para barbeiros, manicures, esteticistas e personal trainers. Link na bio, agenda no celular, dashboard financeiro e Pix antecipado para acabar com o calote."
+  />
+  <meta name="theme-color" content="#f5f2ea" />
+
+  <!-- Open Graph / SEO social -->
+  <meta property="og:title" content="Quanta — Agenda + Pix anti-calote" />
+  <meta property="og:description" content="O sistema enxuto de agendamento para o profissional autônomo solo. Sem calote, sem mensalidade cara." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fontes: serifada elegante (títulos) + sans-serif limpa (texto) + mono (rótulos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+  <!-- ====================================================================== -->
+  <!-- SEÇÃO: CABEÇALHO / NAVEGAÇÃO  (intacta, conforme pedido)                -->
+  <!-- ====================================================================== -->
+  <header class="cabecalho" id="topo">
+    <div class="container cabecalho__conteudo">
+      <a href="#topo" class="marca" aria-label="Quanta - página inicial">
+        <span class="marca__icone" aria-hidden="true"></span>
+        <span class="marca__nome"><strong>Quanta</strong></span>
+      </a>
+
+      <nav class="navegacao" id="menu-navegacao" aria-label="Navegação principal">
+        <a href="#publico" class="navegacao__link">Para quem</a>
+        <a href="#beneficios" class="navegacao__link">Benefícios</a>
+        <a href="#anti-calote" class="navegacao__link">Anti-calote</a>
+        <a href="#planos" class="navegacao__link">Planos</a>
+        <a href="#cadastro" class="botao botao--secundario">Criar conta grátis</a>
+      </nav>
+
+      <button class="menu-botao" id="menu-botao" aria-label="Abrir menu" aria-expanded="false">
+        <span class="menu-botao__linha"></span>
+        <span class="menu-botao__linha"></span>
+        <span class="menu-botao__linha"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: HERO  (intacta, conforme pedido)                              -->
+    <!-- ==================================================================== -->
+    <section class="hero">
+      <div class="container hero__conteudo">
+        <div class="hero__texto">
+          <p class="rotulo">Agenda • Pix • Zero calote</p>
+          <h1 class="hero__titulo">
+            Sua agenda lotada,
+            <em>sem cadeira vazia</em>
+          </h1>
+          <p class="hero__descricao">
+            O sistema de agendamento feito para o profissional autônomo solo.
+            Compartilhe seu link na bio, receba reservas com Pix antecipado e
+            <strong>acabe com o calote</strong> de uma vez por todas.
+          </p>
+
+          <div class="hero__acoes">
+            <a href="#cadastro" class="botao botao--primario">Começar de graça</a>
+            <a href="#anti-calote" class="botao botao--fantasma">Ver o anti-calote</a>
+          </div>
+
+          <p class="hero__nota">Sem cartão de crédito • Pronto em 3 minutos</p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="celular">
+            <div class="celular__topo"></div>
+            <div class="celular__tela">
+              <p class="celular__cabecalho">Agenda de hoje</p>
+
+              <div class="agenda-item agenda-item--confirmado">
+                <span class="agenda-item__hora">09:00</span>
+                <span class="agenda-item__nome">Corte + Barba</span>
+                <span class="selo selo--pago">Pago</span>
+              </div>
+              <div class="agenda-item agenda-item--confirmado">
+                <span class="agenda-item__hora">10:30</span>
+                <span class="agenda-item__nome">Manicure</span>
+                <span class="selo selo--sinal">Sinal 30%</span>
+              </div>
+              <div class="agenda-item">
+                <span class="agenda-item__hora">14:00</span>
+                <span class="agenda-item__nome">Horário livre</span>
+                <span class="selo selo--livre">Livre</span>
+              </div>
+              <div class="agenda-item agenda-item--confirmado">
+                <span class="agenda-item__hora">16:00</span>
+                <span class="agenda-item__nome">Design de sobrancelha</span>
+                <span class="selo selo--pago">Pago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-flutuante">
+            <p class="cartao-flutuante__rotulo">Faturamento do dia</p>
+            <p class="cartao-flutuante__valor">R$ 480,00</p>
+            <p class="cartao-flutuante__variacao">+18% essa semana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: FAIXA DE PROVA SOCIAL EM NÚMEROS                              -->
+    <!-- Reforça confiança logo abaixo do hero (padrão de SaaS de alta conv.) -->
+    <!-- ==================================================================== -->
+    <section class="faixa-numeros" aria-label="Quanta em números">
+      <div class="container faixa-numeros__conteudo">
+        <div class="numero">
+          <p class="numero__valor">+12 mil</p>
+          <p class="numero__rotulo">profissionais solo</p>
+        </div>
+        <span class="faixa-numeros__divisor" aria-hidden="true"></span>
+        <div class="numero">
+          <p class="numero__valor">94%</p>
+          <p class="numero__rotulo">de presença confirmada</p>
+        </div>
+        <span class="faixa-numeros__divisor" aria-hidden="true"></span>
+        <div class="numero">
+          <p class="numero__valor">3 min</p>
+          <p class="numero__rotulo">para colocar no ar</p>
+        </div>
+        <span class="faixa-numeros__divisor" aria-hidden="true"></span>
+        <div class="numero">
+          <p class="numero__valor">R$ 0</p>
+          <p class="numero__rotulo">de taxa no Pix</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: PARA QUEM SERVE  (categorias de profissionais autônomos)       -->
+    <!-- ==================================================================== -->
+    <section class="publico" id="publico">
+    <div class="container">
+      <div class="publico__cabecalho">
+        <h2 class="secao__titulo secao__titulo--centro">
+          Feito para quem trabalha <em>sozinho</em> e atende por hora marcada
+        </h2>
+        <div class="publico__divisor" aria-hidden="true">
+          <span></span><i>✦</i><span></span>
+        </div>
+        <p class="publico__intro">
+          Arraste para o lado ou use as setas para ver como a Quanta se adapta à sua rotina profissional.
+        </p>
+      </div>
+
+      <div class="publico__carrossel">
+        <button type="button" class="publico__seta" id="publico-anterior" aria-label="Categoria anterior">←</button>
+
+        <div class="trinks__faixa" id="publico-faixa">
+          
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--barbeiro" aria-hidden="true">
+              <span class="publico__emoji">💈</span>
+            </div>
+            <h3 class="publico__titulo">Barbearia</h3>
+            <p class="publico__texto">Lote a agenda sem precisar responder cliente no WhatsApp entre um corte e outro.</p>
+            <ul class="publico__beneficios">
+              <li>Link de agendamento na bio</li>
+              <li>Sinal antecipado em horário nobre</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para barbearia →</a>
+          </article>
+
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--manicure" aria-hidden="true">
+              <span class="publico__emoji">💅</span>
+            </div>
+            <h3 class="publico__titulo">Manicure & Designer</h3>
+            <p class="publico__texto">Suas clientes marcam sozinhas, pagam o sinal e simplesmente aparecem.</p>
+            <ul class="publico__beneficios">
+              <li>Agenda visual em blocos</li>
+              <li>Pix automático sem taxa</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para manicure →</a>
+          </article>
+
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--estetica" aria-hidden="true">
+              <span class="publico__emoji">✨</span>
+            </div>
+            <h3 class="publico__titulo">Estética & Sobrancelha</h3>
+            <p class="publico__texto">Organize seus protocolos longos, controle sinais e nunca dobre horários por engano.</p>
+            <ul class="publico__beneficios">
+              <li>Duração customizada por serviço</li>
+              <li>Lista negra de clientes faltosos</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para estética →</a>
+          </article>
+
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--personal" aria-hidden="true">
+              <span class="publico__emoji">🏋️</span>
+            </div>
+            <h3 class="publico__titulo">Personal & Pilates</h3>
+            <p class="publico__texto">Cobre 100% antecipado e transforme sua cartela de alunos em receita previsível.</p>
+            <ul class="publico__beneficios">
+              <li>Mensalidades automatizadas</li>
+              <li>Controle de faltas sem planilhas</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para Personal →</a>
+          </article>
+
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--tatuador" aria-hidden="true">
+              <span class="publico__emoji">🖋️</span>
+            </div>
+            <h3 class="publico__titulo">Tatuador & Studio</h3>
+            <p class="publico__texto">Garanta o valor do sinal por Pix automático antes mesmo de desenhar a arte.</p>
+            <ul class="publico__beneficios">
+              <li>Cobrança de sinal obrigatória</li>
+              <li>Envio de orientações pós-tattoo</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para Tattoo →</a>
+          </article>
+
+          <article class="trinks__card">
+            <div class="publico__capa publico__capa--saude" aria-hidden="true">
+              <span class="publico__emoji">🧠</span>
+            </div>
+            <h3 class="publico__titulo">Psicólogo & Terapeuta</h3>
+            <p class="publico__texto">Sessões organizadas, lembretes automáticos e controle financeiro discreto.</p>
+            <ul class="publico__beneficios">
+              <li>Agendamentos reuniões recorrentes</li>
+              <li>Lembretes via WhatsApp integrados</li>
+            </ul>
+            <a href="#cadastro" class="publico__link">Soluções para Saúde →</a>
+          </article>
+
+        </div>
+
+        <button type="button" class="publico__seta" id="publico-proximo" aria-label="Próxima categoria">→</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: DORES (reformulada — design editorial orgânico, sem cards     -->
+    <!-- genéricos). Linhas alternadas (zig-zag) com manchetes serifadas      -->
+    <!-- enormes + ilustrações desenhadas em CSS + microcopy ao lado.         -->
+    <!-- ==================================================================== -->
+    <section class="dores" id="dores">
+      <div class="container">
+        <div class="dores__cabecalho">
+          <p class="rotulo">O problema de hoje</p>
+          <h2 class="dores__titulo">
+            Toda semana você perde dinheiro <em>e nem percebe</em>.
+          </h2>
+          <p class="dores__intro">
+            Não é falta de cliente. É o jeito como a agenda é gerida hoje:
+            WhatsApp lotado, caderninho, planilha e o famoso "amanhã eu confirmo".
+          </p>
+        </div>
+
+        <ol class="dores__historias">
+          <!-- Dor 1 -->
+          <li class="historia">
+            <div class="historia__visual" aria-hidden="true">
+              <div class="ilustracao ilustracao--conversa">
+                <div class="balao balao--cliente">"Pode amanhã às 10?"</div>
+                <div class="balao balao--voce">"Posso sim, confirmo já"</div>
+                <div class="balao balao--cliente">"Na verdade prefiro 14h"</div>
+                <div class="balao balao--cliente">"Esquece, deixa pra próxima"</div>
+                <div class="balao balao--voce balao--esmaecido">"…"</div>
+              </div>
+            </div>
+            <div class="historia__texto">
+              <span class="historia__indice">01</span>
+              <h3 class="historia__titulo">
+                Sua agenda mora dentro do <em>WhatsApp</em>.
+              </h3>
+              <p class="historia__paragrafo">
+                Você abre o app e tem 14 conversas em aberto, 3 horários pedidos
+                pela mesma hora e zero clareza do que confirmou. O atendimento
+                vira leilão e o cliente desiste antes mesmo de marcar.
+              </p>
+              <p class="historia__custo">
+                <span class="historia__custo-rotulo">Custo médio</span>
+                <span class="historia__custo-valor">~1h30 por dia organizando o caos</span>
+              </p>
+            </div>
+          </li>
+
+          <!-- Dor 2 -->
+          <li class="historia historia--invertida">
+            <div class="historia__visual" aria-hidden="true">
+              <div class="ilustracao ilustracao--cadeira">
+                <div class="cadeira-vazia">
+                  <div class="cadeira-vazia__pessoa">?</div>
+                  <p class="cadeira-vazia__legenda">15:00 — cliente não veio</p>
+                </div>
+                <div class="cadeira-vazia__perda">– R$ 90,00</div>
+              </div>
+            </div>
+            <div class="historia__texto">
+              <span class="historia__indice">02</span>
+              <h3 class="historia__titulo">
+                O calote é silencioso, mas <em>sangra todo mês</em>.
+              </h3>
+              <p class="historia__paragrafo">
+                Um no-show por semana em um horário nobre tira fácil R$ 360 do
+                seu mês. Em um ano são quase R$ 4.300 que entraram, sentaram na
+                cadeira vazia e foram embora sem dizer "oi".
+              </p>
+              <p class="historia__custo">
+                <span class="historia__custo-rotulo">Perda anual estimada</span>
+                <span class="historia__custo-valor">R$ 4.320 com 1 calote/semana</span>
+              </p>
+            </div>
+          </li>
+
+          <!-- Dor 3 -->
+          <li class="historia">
+            <div class="historia__visual" aria-hidden="true">
+              <div class="ilustracao ilustracao--tela">
+                <div class="tela-cheia">
+                  <div class="tela-cheia__menu">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <p class="tela-cheia__legenda">87 menus que você nunca abriu</p>
+                </div>
+              </div>
+            </div>
+            <div class="historia__texto">
+              <span class="historia__indice">03</span>
+              <h3 class="historia__titulo">
+                Os sistemas grandes foram feitos pra <em>salão com 12 funcionários</em>.
+              </h3>
+              <p class="historia__paragrafo">
+                Você é um. Pagar R$ 120 por mês em um software cheio de relatório
+                fiscal, controle de estoque e ficha de RH é jogar dinheiro fora.
+                O Quanta te entrega só o que você usa de verdade.
+              </p>
+              <p class="historia__custo">
+                <span class="historia__custo-rotulo">Economia média</span>
+                <span class="historia__custo-valor">R$ 1.200/ano vs. concorrentes</span>
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: SOLUÇÃO / COMO FUNCIONA  (mantida + leves melhorias)          -->
+    <!-- ==================================================================== -->
+    <section class="solucao" id="solucao">
+      <div class="container">
+        <p class="rotulo rotulo--centro">A solução</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Enxuto, rápido e desenhado para o seu celular
+        </h2>
+        <p class="secao__subtitulo">
+          Duas pontas integradas de forma transparente: o painel onde você
+          gerencia tudo e o link público que seus clientes usam para agendar.
+        </p>
+
+        <div class="recursos">
+          <article class="recurso">
+            <span class="recurso__numero">01</span>
+            <h3 class="recurso__titulo">O painel do prestador</h3>
+            <p class="recurso__texto">
+              Configure serviços (nome, duração e preço), defina sua
+              disponibilidade na semana e veja sua agenda em blocos dinâmicos.
+            </p>
+            <ul class="lista-checada">
+              <li>Agendamento manual ilimitado</li>
+              <li>Dashboard financeiro com gráficos</li>
+              <li>Bloqueio rápido de horários</li>
+            </ul>
+          </article>
+
+          <article class="recurso">
+            <span class="recurso__numero">02</span>
+            <h3 class="recurso__titulo">O link da bio</h3>
+            <p class="recurso__texto">
+              Um link único para colocar no seu Instagram. O cliente escolhe o
+              serviço, vê os horários livres em tempo real e confirma.
+            </p>
+            <ul class="lista-checada">
+              <li>Agendamento em menos de 3 cliques</li>
+              <li>Horários atualizados em tempo real</li>
+              <li>Só pede nome e telefone</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: BENEFÍCIOS E SOLUÇÕES (4 colunas, fundo laranja vibrante)     -->
+    <!-- ==================================================================== -->
+    <section class="beneficios" id="beneficios">
+      <div class="beneficios__decor" aria-hidden="true">
+        <div class="beneficios__tablet">
+          <div class="beneficios__tablet-tela"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="beneficios__cabecalho">
+          <h2 class="beneficios__titulo">Benefícios e Soluções</h2>
+          <div class="beneficios__divisor" aria-hidden="true">
+            <span></span><i>✦</i><span></span>
+          </div>
+        </div>
+
+        <div class="beneficios__grade">
+          <article class="beneficio">
+            <h3 class="beneficio__titulo">O essencial pro seu dia</h3>
+            <p class="beneficio__texto">
+              Tudo o que o profissional solo precisa pra trabalhar todo dia
+              está aqui. Digitalize sua rotina e ganhe tempo pra focar no que
+              importa: atender bem.
+            </p>
+            <ul class="beneficio__lista">
+              <li>Agenda online no celular</li>
+              <li>Cadastro rápido de serviços</li>
+              <li>Histórico completo por cliente</li>
+              <li>Bloqueio de horários em 1 toque</li>
+            </ul>
+            <a href="#cadastro" class="beneficio__link">Saiba mais →</a>
+          </article>
+
+          <article class="beneficio">
+            <h3 class="beneficio__titulo">Bora simplificar as finanças</h3>
+            <p class="beneficio__texto">
+              Substitua planilha confusa por números claros. Faturamento,
+              ticket médio e serviços mais lucrativos em uma tela só.
+            </p>
+            <ul class="beneficio__lista">
+              <li>Fluxo de caixa em tempo real</li>
+              <li>Relatórios prontos pro contador</li>
+              <li>Pix integrado sem taxa</li>
+              <li>Controle do que entrou e do que falta</li>
+            </ul>
+            <a href="#cadastro" class="beneficio__link">Saiba mais →</a>
+          </article>
+
+          <article class="beneficio">
+            <h3 class="beneficio__titulo">Comunicação que converte</h3>
+            <p class="beneficio__texto">
+              Seu link da bio trabalhando 24h. Lembretes automáticos,
+              confirmações e mensagens de pós-atendimento sem você levantar
+              um dedo.
+            </p>
+            <ul class="beneficio__lista">
+              <li>Link único para Instagram</li>
+              <li>Lembretes via WhatsApp</li>
+              <li>Confirmação automática por SMS</li>
+              <li>Integração com Google Calendar</li>
+            </ul>
+            <a href="#cadastro" class="beneficio__link">Saiba mais →</a>
+          </article>
+
+          <article class="beneficio">
+            <h3 class="beneficio__titulo">Para crescer sem medo</h3>
+            <p class="beneficio__texto">
+              Quando você passar de solo pra dupla, a Quanta cresce junto.
+              Sem migração, sem dor de cabeça, sem perder dado.
+            </p>
+            <ul class="beneficio__lista">
+              <li>Lista negra de faltosos</li>
+              <li>Cupons e descontos</li>
+              <li>Mais de 20 relatórios</li>
+              <li>Backup automático na nuvem</li>
+            </ul>
+            <a href="#cadastro" class="beneficio__link">Saiba mais →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: DASHBOARD DO PRESTADOR (mockup grande, lado a lado)           -->
+    <!-- Mostra concretamente o que ele vai usar todo dia.                    -->
+    <!-- ==================================================================== -->
+    <section class="vitrine vitrine--clara" id="painel">
+      <div class="container vitrine__conteudo">
+        <div class="vitrine__texto">
+          <p class="rotulo">Por dentro do painel</p>
+          <h2 class="vitrine__titulo">
+            Tudo o que acontece no seu negócio em <em>uma tela</em>.
+          </h2>
+          <p class="vitrine__paragrafo">
+            Aberto direto no celular. Você vê os horários do dia, quanto entrou
+            no caixa, quem ainda não pagou e o próximo bloqueio — sem precisar
+            sair de tela.
+          </p>
+          <ul class="lista-checada lista-checada--escura">
+            <li>Faturamento de hoje, semana e mês em tempo real</li>
+            <li>Gráfico dos seus serviços mais lucrativos</li>
+            <li>Aviso quando um cliente confirma ou cancela</li>
+            <li>Histórico completo por cliente em 2 toques</li>
+          </ul>
+          <a href="#cadastro" class="botao botao--primario">Quero ver na minha conta</a>
+        </div>
+
+        <!-- Mockup desktop do painel -->
+        <div class="painel-mock" aria-hidden="true">
+          <div class="painel-mock__barra">
+            <span class="painel-mock__ponto"></span>
+            <span class="painel-mock__ponto"></span>
+            <span class="painel-mock__ponto"></span>
+            <span class="painel-mock__url">quanta.app/painel</span>
+          </div>
+          <div class="painel-mock__corpo">
+            <aside class="painel-mock__menu">
+              <span class="painel-mock__logo">Q</span>
+              <a class="painel-mock__item painel-mock__item--ativo">Agenda</a>
+              <a class="painel-mock__item">Clientes</a>
+              <a class="painel-mock__item">Serviços</a>
+              <a class="painel-mock__item">Financeiro</a>
+              <a class="painel-mock__item">Link público</a>
+            </aside>
+            <section class="painel-mock__area">
+              <header class="painel-mock__topo">
+                <div>
+                  <p class="painel-mock__titulo">Quarta-feira, 12 de junho</p>
+                  <p class="painel-mock__sub">7 atendimentos • 5 já pagos</p>
+                </div>
+                <div class="painel-mock__chip">+ Novo agendamento</div>
+              </header>
+
+              <div class="painel-mock__kpis">
+                <div class="kpi">
+                  <p class="kpi__rotulo">Faturado hoje</p>
+                  <p class="kpi__valor">R$ 480</p>
+                  <p class="kpi__delta kpi__delta--alta">+18%</p>
+                </div>
+                <div class="kpi">
+                  <p class="kpi__rotulo">Semana</p>
+                  <p class="kpi__valor">R$ 2.140</p>
+                  <p class="kpi__delta kpi__delta--alta">+11%</p>
+                </div>
+                <div class="kpi">
+                  <p class="kpi__rotulo">Calotes</p>
+                  <p class="kpi__valor">0</p>
+                  <p class="kpi__delta kpi__delta--baixa">–100%</p>
+                </div>
+                <div class="kpi">
+                  <p class="kpi__rotulo">Ticket médio</p>
+                  <p class="kpi__valor">R$ 68</p>
+                  <p class="kpi__delta kpi__delta--alta">+R$ 6</p>
+                </div>
+              </div>
+
+              <div class="painel-mock__linhas">
+                <div class="linha-agenda">
+                  <span class="linha-agenda__hora">09:00</span>
+                  <span class="linha-agenda__nome">Marina — Corte + Escova</span>
+                  <span class="selo selo--pago">Pago</span>
+                </div>
+                <div class="linha-agenda">
+                  <span class="linha-agenda__hora">10:30</span>
+                  <span class="linha-agenda__nome">Rafael — Barba completa</span>
+                  <span class="selo selo--sinal">Sinal 30%</span>
+                </div>
+                <div class="linha-agenda linha-agenda--vazia">
+                  <span class="linha-agenda__hora">12:00</span>
+                  <span class="linha-agenda__nome">Almoço bloqueado</span>
+                  <span class="selo selo--livre">Bloqueado</span>
+                </div>
+                <div class="linha-agenda">
+                  <span class="linha-agenda__hora">14:00</span>
+                  <span class="linha-agenda__nome">Júlia — Design + Henna</span>
+                  <span class="selo selo--pago">Pago</span>
+                </div>
+                <div class="linha-agenda">
+                  <span class="linha-agenda__hora">15:30</span>
+                  <span class="linha-agenda__nome">Pedro — Corte simples</span>
+                  <span class="selo selo--pago">Pago</span>
+                </div>
+
+                <div class="painel-mock__grafico" aria-hidden="true">
+                  <div style="height:35%"></div>
+                  <div style="height:55%"></div>
+                  <div style="height:42%"></div>
+                  <div style="height:70%"></div>
+                  <div style="height:82%"></div>
+                  <div style="height:60%"></div>
+                  <div style="height:90%"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: FLUXO DO CLIENTE EM 3 CLIQUES                                  -->
+    <!-- Três telas em sequência mostrando a página pública.                  -->
+    <!-- ==================================================================== -->
+    <section class="fluxo" id="fluxo">
+      <div class="container">
+        <p class="rotulo rotulo--centro">A jornada do seu cliente</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Agendar leva <em class="acento-laranja">3 cliques</em>. Sério.
+        </h2>
+        <p class="secao__subtitulo">
+          O cliente abre o seu link no Instagram, escolhe o serviço, o horário
+          e confirma com o Pix. Sem cadastro, sem fricção, sem desculpa.
+        </p>
+
+        <ol class="fluxo__passos">
+          <!-- Passo 1 -->
+          <li class="fluxo__passo">
+            <div class="fluxo__telefone" aria-hidden="true">
+              <div class="fluxo__tela">
+                <p class="fluxo__loja">Studio da Júlia</p>
+                <p class="fluxo__legenda">Escolha o serviço</p>
+                <button class="fluxo__opcao fluxo__opcao--ativa">
+                  <span>Design de sobrancelha</span>
+                  <span class="fluxo__preco">R$ 60</span>
+                </button>
+                <button class="fluxo__opcao">
+                  <span>Design + Henna</span>
+                  <span class="fluxo__preco">R$ 90</span>
+                </button>
+                <button class="fluxo__opcao">
+                  <span>Limpeza de pele</span>
+                  <span class="fluxo__preco">R$ 140</span>
+                </button>
+              </div>
+            </div>
+            <div class="fluxo__legenda-passo">
+              <span class="fluxo__numero">1º clique</span>
+              <h3 class="fluxo__titulo">Escolhe o serviço</h3>
+              <p>Catálogo curto e direto, com preço e duração visíveis.</p>
+            </div>
+          </li>
+
+          <!-- Passo 2 -->
+          <li class="fluxo__passo">
+            <div class="fluxo__telefone" aria-hidden="true">
+              <div class="fluxo__tela">
+                <p class="fluxo__loja">Design de sobrancelha</p>
+                <p class="fluxo__legenda">Hoje, quarta 12/jun</p>
+                <div class="fluxo__grade-horarios">
+                  <span class="fluxo__hora">09:00</span>
+                  <span class="fluxo__hora fluxo__hora--ocupada">10:30</span>
+                  <span class="fluxo__hora fluxo__hora--ativa">14:00</span>
+                  <span class="fluxo__hora">15:30</span>
+                  <span class="fluxo__hora">17:00</span>
+                  <span class="fluxo__hora fluxo__hora--ocupada">18:30</span>
+                </div>
+                <button class="fluxo__cta">Reservar 14:00</button>
+              </div>
+            </div>
+            <div class="fluxo__legenda-passo">
+              <span class="fluxo__numero">2º clique</span>
+              <h3 class="fluxo__titulo">Escolhe o horário</h3>
+              <p>Disponibilidade em tempo real — nada de "deixa eu confirmar".</p>
+            </div>
+          </li>
+
+          <!-- Passo 3 -->
+          <li class="fluxo__passo">
+            <div class="fluxo__telefone" aria-hidden="true">
+              <div class="fluxo__tela fluxo__tela--pix">
+                <p class="fluxo__loja">Confirmar reserva</p>
+                <div class="fluxo__qr" aria-hidden="true">
+                  <div class="fluxo__qr-grade">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <p class="fluxo__valor">Sinal de R$ 18,00 via Pix</p>
+                <p class="fluxo__nota-mini">Vaga reservada por 15 min</p>
+                <button class="fluxo__cta">Já paguei</button>
+              </div>
+            </div>
+            <div class="fluxo__legenda-passo">
+              <span class="fluxo__numero">3º clique</span>
+              <h3 class="fluxo__titulo">Paga o sinal e pronto</h3>
+              <p>Pix automático. A vaga só "trava" depois do pagamento confirmado.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: ANTI-CALOTE  (intacta — o "grande diferencial")                -->
+    <!-- ==================================================================== -->
+    <section class="anti-calote" id="anti-calote">
+      <div class="container">
+        <p class="rotulo rotulo--centro rotulo--claro">O grande diferencial</p>
+        <h2 class="secao__titulo secao__titulo--centro secao__titulo--claro">
+          Pix antecipado que destrói o calote
+        </h2>
+        <p class="secao__subtitulo secao__subtitulo--claro">
+          Você escolhe, com uma chave seletora no painel, como o seu link
+          público vai funcionar. Integração nativa com Pix automatizado.
+        </p>
+
+        <div class="modos">
+          <article class="modo">
+            <h3 class="modo__titulo">Pós-serviço</h3>
+            <p class="modo__texto">
+              O cliente só reserva o horário e paga no local. O modelo
+              tradicional, agora organizado.
+            </p>
+          </article>
+
+          <article class="modo modo--destaque">
+            <span class="modo__selo">Destruidor de calotes</span>
+            <h3 class="modo__titulo">Sinal antecipado</h3>
+            <p class="modo__texto">
+              O horário só é garantido com um sinal (ex: 30%) via Pix. O sistema
+              gera o QR Code e segura a vaga por 15 minutos até a confirmação.
+            </p>
+          </article>
+
+          <article class="modo">
+            <h3 class="modo__titulo">Pagamento integral</h3>
+            <p class="modo__texto">
+              O cliente paga 100% do valor de forma antecipada para garantir a
+              reserva. Faturamento na mão antes do atendimento.
+            </p>
+          </article>
+        </div>
+
+        <div class="taxa-zero">
+          <p class="rotulo rotulo--claro">Engenharia da taxa zero</p>
+          <h3 class="taxa-zero__titulo">Você recebe limpo. Sempre.</h3>
+          <p class="taxa-zero__texto">
+            A taxa do Pix é repassada ao cliente final como
+            <strong>"Taxa de conveniência"</strong>. Se o sinal é de R$ 20,00,
+            o cliente paga R$ 21,89 — e você recebe os R$ 20,00 inteiros na
+            sua carteira. Custo de processamento: zero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: DEPOIMENTOS / PROVA SOCIAL                                     -->
+    <!-- Quebra a objeção "será que funciona pra mim?".                       -->
+    <!-- ==================================================================== -->
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
+        <p class="rotulo rotulo--centro">Quem já usa</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Profissionais solo que <em class="acento-laranja">pararam de perder dinheiro</em>.
+        </h2>
+
+        <div class="depoimentos__lista">
+          <figure class="depoimento depoimento--destaque">
+            <blockquote class="depoimento__texto">
+              "Eu tomava de 3 a 4 calotes por mês. Coloquei o sinal de 30% e
+              <strong>zerou</strong>. O cliente sério paga sem reclamar."
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="depoimento__avatar" aria-hidden="true" style="background:#f0562a">JM</span>
+              <span>
+                <span class="depoimento__nome">Júlio Mendes</span>
+                <span class="depoimento__cargo">Barbeiro · Belo Horizonte</span>
+              </span>
+            </figcaption>
+            <p class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
+          </figure>
+
+          <figure class="depoimento">
+            <blockquote class="depoimento__texto">
+              "Saí de uma planilha confusa e do WhatsApp. Hoje meu Instagram
+              tem o link e a cliente marca sozinha às 23h."
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="depoimento__avatar" aria-hidden="true" style="background:#b8862f">CA</span>
+              <span>
+                <span class="depoimento__nome">Camila Araújo</span>
+                <span class="depoimento__cargo">Designer de sobrancelha · Recife</span>
+              </span>
+            </figcaption>
+            <p class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
+          </figure>
+
+          <figure class="depoimento">
+            <blockquote class="depoimento__texto">
+              "Pago R$ 19,90 e antes pagava R$ 129. E uso mais a Quanta do que
+              usava o outro — sem aquele monte de tela inútil."
+            </blockquote>
+            <figcaption class="depoimento__autor">
+              <span class="depoimento__avatar" aria-hidden="true" style="background:#1c1a17;color:#c9f25c">RP</span>
+              <span>
+                <span class="depoimento__nome">Renan Paiva</span>
+                <span class="depoimento__cargo">Personal trainer · Curitiba</span>
+              </span>
+            </figcaption>
+            <p class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
+          </figure>
+        </div>
+
+        <p class="depoimentos__rodape">
+          Avaliação média <strong>4,9 / 5</strong> em mais de 1.800 reviews na App Store e Play Store
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: MARCAS / CARROSSEL "QUEM ESTÁ DANDO UM UP COM A QUANTA"        -->
+    <!-- ==================================================================== -->
+    <section class="marcas" id="marcas" aria-label="Profissionais que usam Quanta">
+      <div class="container">
+        <h2 class="marcas__titulo">
+          Quem está dando um <em>up</em> com a Quanta
+        </h2>
+        <div class="marcas__divisor" aria-hidden="true">
+          <span></span><i>✦</i><span></span>
+        </div>
+
+        <div class="marcas__carrossel">
+          <button class="marcas__seta" id="marcas-anterior" aria-label="Anterior">←</button>
+          <div class="marcas__faixa" id="marcas-faixa">
+            <div class="marcas__circulo"><span>Doctor<strong>Feet</strong></span></div>
+            <div class="marcas__circulo"><span class="cursiva">Sócios<br>Sobrancelhas</span></div>
+            <div class="marcas__circulo"><span class="cursiva">Expressão<br>do Olhar</span></div>
+            <div class="marcas__circulo"><span class="serifa">Werner<br><small>COIFFEUR</small></span></div>
+            <div class="marcas__circulo"><span>lola<br><strong>monteiro</strong></span></div>
+            <div class="marcas__circulo"><span class="serifa">Pose</span></div>
+            <div class="marcas__circulo"><span>Depyl<br><strong>Action</strong></span></div>
+            <div class="marcas__circulo"><span class="grossa">ANTONY</span></div>
+            <div class="marcas__circulo"><span class="cursiva">Além<br>do Olhar</span></div>
+            <div class="marcas__circulo"><span class="serifa">fast<br><em>escova</em></span></div>
+          </div>
+          <button class="marcas__seta" id="marcas-proximo" aria-label="Próximo">→</button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: COMPARATIVO (quebra de objeção direta)                         -->
+    <!-- ==================================================================== -->
+    <section class="comparativo" id="comparativo">
+      <div class="container">
+        <p class="rotulo rotulo--centro">Por que mudar</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Como o Quanta se compara
+        </h2>
+
+        <div class="tabela-wrap">
+          <table class="tabela-comp">
+            <thead>
+              <tr>
+                <th scope="col">O que você precisa</th>
+                <th scope="col">WhatsApp / Caderno</th>
+                <th scope="col">Sistemas de salão</th>
+                <th scope="col" class="tabela-comp__nosso">Quanta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Cliente marca sozinho 24h</th>
+                <td><span class="marca-icone marca-icone--nao">✕</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Pix antecipado anti-calote</th>
+                <td><span class="marca-icone marca-icone--nao">✕</span></td>
+                <td><span class="marca-icone marca-icone--meio">parcial</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓ nativo</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Taxa de Pix zero pra você</th>
+                <td>—</td>
+                <td><span class="marca-icone marca-icone--nao">paga 1–3%</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓ 0%</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Dashboard financeiro real</th>
+                <td><span class="marca-icone marca-icone--nao">✕</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓</span></td>
+                <td><span class="marca-icone marca-icone--sim">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Mensalidade</th>
+                <td>R$ 0 (e R$ -300 em calotes)</td>
+                <td>R$ 70 a R$ 150</td>
+                <td><strong>R$ 0 a R$ 39,90</strong></td>
+              </tr>
+              <tr>
+                <th scope="row">Tempo pra colocar no ar</th>
+                <td>Nunca termina</td>
+                <td>1 a 2 semanas</td>
+                <td><strong>3 minutos</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: PLANOS  (intacta, conforme pedido)                            -->
+    <!-- ==================================================================== -->
+    <section class="planos" id="planos">
+      <div class="container">
+        <p class="rotulo rotulo--centro">Planos</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Comece de graça. Pague só quando crescer.
+        </h2>
+        <p class="secao__subtitulo">
+          Se você tomar um único calote no mês, já perde mais do que o valor
+          da mensalidade. O plano se paga como um seguro anti-calote.
+        </p>
+
+        <div class="planos__lista">
+          <article class="plano">
+            <h3 class="plano__nome">Free</h3>
+            <p class="plano__preco"><span class="plano__moeda">R$</span>0<span class="plano__periodo">/mês</span></p>
+            <p class="plano__resumo">Para organizar toda a sua vida lá dentro.</p>
+            <ul class="lista-checada">
+              <li>Agendamentos manuais ilimitados</li>
+              <li>Dashboard com gráficos</li>
+              <li>10 agendamentos automáticos/mês</li>
+              <li>Apenas modo pós-serviço</li>
+            </ul>
+            <a href="#cadastro" class="botao botao--fantasma botao--largo">Criar conta</a>
+          </article>
+
+          <article class="plano">
+            <h3 class="plano__nome">Pro</h3>
+            <p class="plano__preco"><span class="plano__moeda">R$</span>19<span class="plano__centavos">,90</span><span class="plano__periodo">/mês</span></p>
+            <p class="plano__resumo">Para quem já estourou o plano gratuito.</p>
+            <ul class="lista-checada">
+              <li>Tudo do Free</li>
+              <li>50 agendamentos automáticos/mês</li>
+              <li>Modo pós-serviço</li>
+              <li>Ideal para tempo parcial</li>
+            </ul>
+            <a href="#cadastro" class="botao botao--secundario botao--largo">Assinar Pro</a>
+          </article>
+
+          <article class="plano plano--destaque">
+            <span class="plano__selo">Mais escolhido</span>
+            <h3 class="plano__nome">Business</h3>
+            <p class="plano__preco"><span class="plano__moeda">R$</span>39<span class="plano__centavos">,90</span><span class="plano__periodo">/mês</span></p>
+            <p class="plano__resumo">O seguro anti-calote completo.</p>
+            <ul class="lista-checada">
+              <li>Agendamentos ilimitados</li>
+              <li>Cobrança de Sinal e Integral via Pix</li>
+              <li>Dashboard financeiro completo</li>
+              <li>Lista negra de clientes faltosos</li>
+            </ul>
+            <a href="#cadastro" class="botao botao--primario botao--largo">Assinar Business</a>
+          </article>
+        </div>
+
+        <p class="planos__garantia">
+          <strong>Garantia de 14 dias.</strong> Não gostou? A gente devolve 100%, sem pergunta.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: FAQ (quebra de objeções finais)                                -->
+    <!-- ==================================================================== -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <p class="rotulo rotulo--centro">Dúvidas frequentes</p>
+        <h2 class="secao__titulo secao__titulo--centro">
+          Antes de criar sua conta
+        </h2>
+
+        <ul class="faq__lista">
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>Preciso saber de tecnologia para usar?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Não. Se você usa WhatsApp e Instagram, você usa o Quanta.
+              O setup leva 3 minutos: nome, serviços, horários — pronto.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>O cliente precisa baixar algum aplicativo?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Não. Ele só abre o seu link (igual abrir um site) e marca pelo
+              navegador do celular. Sem cadastro, sem senha, sem app.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>E se eu não quiser cobrar Pix antecipado?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Tranquilo. Você liga e desliga a cobrança quando quiser. Pode
+              começar no modo "pós-serviço" e ativar o sinal só nos horários
+              nobres, por exemplo.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>O Pix entra direto na minha conta?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Sim, direto na sua chave Pix. A gente não fica com o dinheiro
+              em nenhum momento e a taxa do banco é repassada para o cliente
+              como "taxa de conveniência".</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>Posso cancelar quando quiser?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Sempre. Sem multa, sem fidelidade. Cancela em 1 clique no
+              painel e seus dados ficam disponíveis para exportação por 90 dias.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pergunta" aria-expanded="false">
+              <span>Funciona pra qualquer profissão?</span>
+              <span class="faq__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__resposta">
+              <p>Funciona pra qualquer atendimento por hora marcada e individual:
+              barbeiro, manicure, esteticista, designer de sobrancelha, personal,
+              tatuador, psicólogo, fisioterapeuta, professor particular etc.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SEÇÃO: CHAMADA FINAL / CADASTRO  (intacta)                            -->
+    <!-- ==================================================================== -->
+    <section class="cta-final" id="cadastro">
+      <div class="container cta-final__conteudo">
+        <h2 class="cta-final__titulo">Pronto para nunca mais ter cadeira vazia?</h2>
+        <p class="cta-final__texto">
+          Crie sua conta grátis, monte sua agenda e comece a receber
+          reservas com Pix ainda hoje.
+        </p>
+
+        <form class="formulario" id="formulario-cadastro" novalidate>
+          <input
+            type="text"
+            class="formulario__campo"
+            id="campo-nome"
+            name="nome"
+            placeholder="Seu nome"
+            autocomplete="name"
+            required
+          />
+          <input
+            type="email"
+            class="formulario__campo"
+            id="campo-email"
+            name="email"
+            placeholder="Seu melhor e-mail"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="botao botao--primario">Criar conta grátis</button>
+        </form>
+
+        <p class="formulario__mensagem" id="formulario-mensagem" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================== -->
+  <!-- SEÇÃO: RODAPÉ                                                           -->
+  <!-- ====================================================================== -->
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <div class="rodape__marca">
+        <span class="marca__nome"><strong>Quanta</strong></span>
+        <p class="rodape__texto">
+          Agendamento e gestão financeira para o profissional autônomo solo.
+        </p>
+      </div>
+
+      <nav class="rodape__links" aria-label="Links do rodapé">
+        <a href="#publico" class="rodape__link">Para quem serve</a>
+        <a href="#beneficios" class="rodape__link">Benefícios</a>
+        <a href="#solucao" class="rodape__link">Como funciona</a>
+        <a href="#painel" class="rodape__link">Painel</a>
+        <a href="#anti-calote" class="rodape__link">Anti-calote</a>
+        <a href="#depoimentos" class="rodape__link">Depoimentos</a>
+        <a href="#planos" class="rodape__link">Planos</a>
+        <a href="#faq" class="rodape__link">Dúvidas</a>
+      </nav>
+    </div>
+
+    <p class="rodape__creditos">
+      © <span id="ano-atual">2026</span> Quanta. Feito para quem trabalha sozinho.
+    </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
