@@ -227,18 +227,50 @@ function configurarCarrosselPublico() {
   
   configurarCarrosselDestaqueCentro();
 }
+
+
+/* --------------------------------------------------------------------------
+   7. CONFIGURAÇÃO DO BOTÃO VOLTAR AO TOPO
+   -------------------------------------------------------------------------- */
+function configurarBotaoTopo() {
+  const botaoTopo = document.getElementById("botao-topo");
+  if (!botaoTopo) return;
+
+  // Mostra ou esconde o botão dependendo da rolagem da página
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      botaoTopo.classList.add("visivel");
+    } else {
+      botaoTopo.classList.remove("visivel");
+    }
+  }, { passive: true });
+
+  // Ação de clique para rolar de volta ao topo suavemente
+  botaoTopo.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
 /* --------------------------------------------------------------------------
    INICIALIZAÇÃO
    -------------------------------------------------------------------------- */
 function iniciar() {
-  configurarMenu();
-  configurarFormulario();
-  configurarAnoRodape();
-  configurarAnimacaoEntrada();
-  configurarFaq();
-  configurarCarrosselPublico(); 
-  configurarCarrosselMarcas(); // Adicionado para inicializar o carrossel de marcas
+  // Chamadas das suas funções existentes
+  if (typeof configurarMenu === "function") configurarMenu();
+  if (typeof configurarFormulario === "function") configurarFormulario();
+  if (typeof configurarAnoRodape === "function") configurarAnoRodape();
+  if (typeof configurarAnimacaoEntrada === "function") configurarAnimacaoEntrada();
+  if (typeof configurarFaq === "function") configurarFaq();
+  if (typeof configurarCarrosselMarcas === "function") configurarCarrosselMarcas();
+  if (typeof configurarCarrosselPublico === "function") configurarCarrosselPublico();
+  
+  // Nova funcionalidade integrada
+  configurarBotaoTopo();
 }
 
+// Executa a inicialização assim que o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", iniciar);
 

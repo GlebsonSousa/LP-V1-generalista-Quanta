@@ -1714,3 +1714,59 @@ button { font: inherit; }
   .beneficios__decor { display: none; }
   .beneficio { max-width: 100%; }
 }
+
+/* ==========================================================================
+   23. BOTÃO VOLTAR AO TOPO
+   ========================================================================== */
+.botao-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--cor-laranja, #ff6b35);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+}
+
+/* Estado ativo (mostrado via JS) */
+.botao-topo.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Efeito de hover responsivo e elegante */
+.botao-topo:hover {
+  background-color: var(--cor-laranja-escuro, #e05a2b);
+  transform: translateY(-4px);
+}
+
+/* Tamanho do ícone SVG interno */
+.botao-topo__icone {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ajuste para telas pequenas (mobile) para não cobrir conteúdos críticos */
+@media (max-width: 768px) {
+  .botao-topo {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+  .botao-topo__icone {
+    width: 18px;
+    height: 18px;
+  }
+}
