@@ -74,7 +74,7 @@
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { scroll-behavior: smooth; scroll-padding-top: 30px; }
 
 body {
   font-family: var(--fonte-texto);
@@ -248,7 +248,7 @@ button { font: inherit; }
 /* ==========================================================================
    6. HERO
    ========================================================================== */
-.hero { padding: 80px 0 100px; }
+.hero { padding: 30px 0 50px; }
 .hero__conteudo {
   display: flex;
   align-items: center;
@@ -390,7 +390,7 @@ button { font: inherit; }
 /* ==========================================================================
    8. DORES — design editorial orgânico, em zig-zag (sem cards genéricos)
    ========================================================================== */
-.dores { padding: 100px 0; }
+.dores { padding: 50px 0; }
 
 .dores__cabecalho {
   display: flex;
@@ -1540,6 +1540,25 @@ button { font: inherit; }
   border-top: 1px solid var(--cor-borda); transition: background .2s ease;
 }
 .publico__link:hover { background: #fff7f2; }
+
+/* Container da imagem do card */
+.publico__capa { 
+  height: 160px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 70px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.publico__capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
 
 /* RESPONSIVO MOBILE RECALIBRADO */
 @media (max-width: 768px) {
