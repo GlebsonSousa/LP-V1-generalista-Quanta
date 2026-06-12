@@ -589,7 +589,7 @@ button { font: inherit; }
 /* ==========================================================================
    9. SOLUÇÃO
    ========================================================================== */
-.solucao { padding: 80px 0; }
+.solucao { padding: 64px 0; }
 .recursos {
   display: flex;
   flex-wrap: wrap;
@@ -616,7 +616,7 @@ button { font: inherit; }
 /* ==========================================================================
    10. VITRINE (painel do prestador — mockup desktop)
    ========================================================================== */
-.vitrine { padding: 100px 0; }
+.vitrine { padding: 72px 0; }
 .vitrine--clara { background: linear-gradient(180deg, var(--cor-fundo) 0%, #efe9d6 100%); }
 .vitrine__conteudo {
   display: flex;
@@ -791,7 +791,7 @@ button { font: inherit; }
 /* ==========================================================================
    11. FLUXO DO CLIENTE
    ========================================================================== */
-.fluxo { padding: 100px 0; }
+.fluxo { padding: 72px 0; }
 .fluxo__passos {
   display: flex;
   flex-wrap: wrap;
@@ -960,7 +960,7 @@ button { font: inherit; }
 /* ==========================================================================
    12. ANTI-CALOTE
    ========================================================================== */
-.anti-calote { padding: 90px 0; background-color: var(--cor-escuro); }
+.anti-calote { padding: 72px 0; background-color: var(--cor-escuro); }
 .modos {
   display: flex;
   flex-wrap: wrap;
@@ -1028,7 +1028,7 @@ button { font: inherit; }
 /* ==========================================================================
    13. DEPOIMENTOS
    ========================================================================== */
-.depoimentos { padding: 100px 0; }
+.depoimentos { padding: 72px 0; }
 .depoimentos__lista {
   display: flex;
   flex-wrap: wrap;
@@ -1094,7 +1094,7 @@ button { font: inherit; }
 /* ==========================================================================
    14. COMPARATIVO
    ========================================================================== */
-.comparativo { padding: 100px 0; }
+.comparativo { padding: 72px 0; }
 .tabela-wrap { margin-top: 48px; overflow-x: auto; }
 .tabela-comp {
   width: 100%;
@@ -1154,7 +1154,7 @@ button { font: inherit; }
 /* ==========================================================================
    15. PLANOS
    ========================================================================== */
-.planos { padding: 90px 0; }
+.planos { padding: 72px 0; }
 .planos__lista {
   display: flex;
   flex-wrap: wrap;
@@ -1223,7 +1223,7 @@ button { font: inherit; }
 /* ==========================================================================
    16. FAQ
    ========================================================================== */
-.faq { padding: 90px 0; }
+.faq { padding: 72px 0; }
 .faq__lista {
   display: flex;
   flex-direction: column;
@@ -1278,7 +1278,7 @@ button { font: inherit; }
 /* ==========================================================================
    17. CTA FINAL E FORMULÁRIO
    ========================================================================== */
-.cta-final { padding: 90px 0; }
+.cta-final { padding: 72px 0; }
 .cta-final__conteudo {
   display: flex;
   flex-direction: column;
@@ -1415,7 +1415,7 @@ button { font: inherit; }
 /* ==========================================================================
    20. PÚBLICO (Para quem serve) — Método Trinks Isolado e Fluido
    ========================================================================== */
-.publico { padding: 100px 0; background: var(--cor-fundo); }
+.publico { padding: 72px 0; background: var(--cor-fundo); }
 .publico__cabecalho { text-align: center; max-width: 720px; margin: 0 auto 56px; }
 .publico__divisor {
   display: flex; align-items: center; justify-content: center; gap: 16px;
@@ -1458,7 +1458,7 @@ button { font: inherit; }
 .publico__seta:hover { background: var(--cor-laranja-escuro); transform: scale(1.05); }
 
 /* Faixa de rolagem universal para Desktop e Mobile */
-.trinks__faixa {
+.publico__faixa {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -1476,10 +1476,10 @@ button { font: inherit; }
   /* CORREÇÃO AQUI: pan-x para o carrossel + pan-y para a página subir/descer */
   touch-action: pan-x pan-y; 
 }
-.trinks__faixa::-webkit-scrollbar { display: none; }
+.publico__faixa::-webkit-scrollbar { display: none; }
 
 /* Base dos cards */
-.trinks__card {
+.publico__card {
   flex: 0 0 310px; /* Impede o card de encolher ou esticar */
   width: 310px;
   max-width: 310px;
@@ -1496,39 +1496,14 @@ button { font: inherit; }
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* RESPONSIVO MOBILE RECALIBRADO */
-@media (max-width: 768px) {
-  .trinks__faixa {
-    padding: 48px 0 24px 0 !important;
-    /* Alinha o primeiro card com a margem da tela */
-    scroll-padding-left: 24px !important; 
-    scroll-padding-right: 24px !important;
-  }
-
-  .trinks__faixa::before,
-  .trinks__faixa::after {
-    content: "";
-    display: block;
-    flex: 0 0 24px; /* Cria o respiro elástico nas pontas para o toque */
-  }
-
-  /* Garante o tamanho exato de tela menos as margens laterais */
-  .trinks__card {
-    flex: 0 0 calc(100vw - 48px) !important;
-    width: calc(100vw - 48px) !important;
-    max-width: calc(100vw - 48px) !important;
-    border-radius: 24px !important;
-  }
-}
-
 /* Elementos internos dos cards */
-.publico__capa { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 70px; position: relative; }
 .publico__capa--barbeiro { background: linear-gradient(135deg, #2a1f1a, #4a342a); }
 .publico__capa--manicure { background: linear-gradient(135deg, #ffd6e3, #ffb3cd); }
 .publico__capa--estetica { background: linear-gradient(135deg, #fff3d6, #ffe2a8); }
 .publico__capa--personal { background: linear-gradient(135deg, #d6f0ff, #a8d8ff); }
 .publico__capa--tatuador { background: linear-gradient(135deg, #1c1a17, #3a3530); }
 .publico__capa--saude   { background: linear-gradient(135deg, #e0ffd6, #b8f0a0); }
+.publico__capa--petshop { background: linear-gradient(135deg, #ffe8d6, #ffcfa8); }
 .publico__emoji { filter: drop-shadow(0 4px 8px rgba(0,0,0,.15)); }
 .publico__titulo { font-family: var(--fonte-titulo); font-size: 1.4rem; font-weight: 600; padding: 20px 20px 8px; color: var(--cor-tinta); }
 .publico__texto { padding: 0 20px 12px; color: var(--cor-tinta-suave); font-size: .92rem; line-height: 1.45; }
@@ -1541,22 +1516,54 @@ button { font: inherit; }
 }
 .publico__link:hover { background: #fff7f2; }
 
+/* Card em destaque (centralizado no carrossel) */
+.publico__card.ativo {
+  border-color: var(--cor-laranja);
+  box-shadow: 0 12px 32px rgba(255, 107, 53, .18);
+  transform: translateY(-4px);
+}
+
+/* Pontos indicadores do carrossel (estilo "contador") */
+.publico__pontos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.publico__ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-borda);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, width .2s ease;
+}
+.publico__ponto.ativo {
+  background: var(--cor-laranja);
+  width: 22px;
+  border-radius: 4px;
+}
+
 /* Container da imagem do card */
-.publico__capa { 
-  height: 160px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  font-size: 70px; 
-  position: relative; 
-  overflow: hidden; 
+.publico__capa {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  position: relative;
+  overflow: hidden;
 }
 
 .publico__capa img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: center; 
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 
@@ -1573,22 +1580,22 @@ button { font: inherit; }
   #publico-anterior { left: calc(50% - 52px) !important; }
   #publico-proximo { right: calc(50% - 52px) !important; }
 
-  .trinks__faixa {
+  .publico__faixa {
     padding: 48px 0 24px 0 !important;
     scroll-padding-left: 24px !important;
     scroll-padding-right: 24px !important;
   }
 
   /* Cria o espaço elástico nas pontas para permitir centralizar o primeiro e o último card */
-  .trinks__faixa::before,
-  .trinks__faixa::after {
+  .publico__faixa::before,
+  .publico__faixa::after {
     content: "";
     display: block;
     flex: 0 0 24px;
   }
 
-  /* Ajuste de proporção idêntico à Trinks */
-  .trinks__card {
+  /* Cada card ocupa quase a tela toda, com respiro nas laterais */
+  .publico__card {
     flex: 0 0 calc(100vw - 48px) !important;
     width: calc(100vw - 48px) !important;
     max-width: calc(100vw - 48px) !important;
@@ -1680,7 +1687,7 @@ button { font: inherit; }
 /* ==========================================================================
    22. MARCAS (carrossel de quem usa)
    ========================================================================== */
-.marcas { padding: 80px 0; background: var(--cor-fundo); }
+.marcas { padding: 64px 0; background: var(--cor-fundo); }
 .marcas__titulo {
   text-align: center;
   font-family: var(--fonte-titulo); font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -1732,6 +1739,28 @@ button { font: inherit; }
 @media (max-width: 720px) {
   .beneficios__decor { display: none; }
   .beneficio { max-width: 100%; }
+}
+
+/* ==========================================================================
+   24. ESPAÇAMENTO ENTRE SEÇÕES NO MOBILE
+   Reduz o respiro vertical das seções grandes em telas pequenas.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .vitrine,
+  .fluxo,
+  .anti-calote,
+  .depoimentos,
+  .comparativo,
+  .planos,
+  .faq,
+  .cta-final,
+  .publico,
+  .solucao {
+    padding: 48px 0;
+  }
+  .marcas {
+    padding: 40px 0;
+  }
 }
 
 /* ==========================================================================

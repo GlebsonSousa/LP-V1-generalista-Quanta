@@ -173,58 +173,74 @@ function configurarCarrossel(idFaixa, idAnterior, idProximo, obterPassoFn) {
 
 function configurarCarrosselDestaqueCentro() {
   const faixa = document.getElementById("publico-faixa");
+  const pontosContainer = document.getElementById("publico-pontos");
   if (!faixa) return;
 
-  const cards = faixa.querySelectorAll(".trinks__card");
+  const cards = faixa.querySelectorAll(".publico__card");
+  if (cards.length === 0) return;
+
+  // Cria um ponto (bolinha) para cada card
+  if (pontosContainer) {
+    cards.forEach(function (_, indice) {
+      const ponto = document.createElement("button");
+      ponto.type = "button";
+      ponto.className = "publico__ponto";
+      ponto.setAttribute("aria-label", "Ir para o card " + (indice + 1));
+      ponto.addEventListener("click", function () {
+        cards[indice].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      });
+      pontosContainer.appendChild(ponto);
+    });
+  }
+
+  const pontos = pontosContainer ? pontosContainer.querySelectorAll(".publico__ponto") : [];
 
   function checarCardCentral() {
     const containerProporcoes = faixa.getBoundingClientRect();
     const centroDoContainer = containerProporcoes.left + (containerProporcoes.width / 2);
 
-    let cardMaisProximo = null;
+    let indiceMaisProximo = 0;
     let menorDistancia = Infinity;
 
-    cards.forEach(function (card) {
+    cards.forEach(function (card, indice) {
       const cardProporcoes = card.getBoundingClientRect();
       const centroDoCard = cardProporcoes.left + (cardProporcoes.width / 2);
       const distancia = Math.abs(centroDoContainer - centroDoCard);
 
       if (distancia < menorDistancia) {
         menorDistancia = distancia;
-        cardMaisProximo = card;
+        indiceMaisProximo = indice;
       }
     });
 
-    cards.forEach(function (card) {
-      card.classList.remove("ativo");
+    cards.forEach(function (card, indice) {
+      card.classList.toggle("ativo", indice === indiceMaisProximo);
     });
 
-    if (cardMaisProximo) {
-      cardMaisProximo.classList.add("ativo");
-    }
+    pontos.forEach(function (ponto, indice) {
+      ponto.classList.toggle("ativo", indice === indiceMaisProximo);
+    });
   }
 
   faixa.addEventListener("scroll", checarCardCentral, { passive: true });
+  window.addEventListener("resize", checarCardCentral, { passive: true });
 
-  if (cards.length > 0) {
-    cards[0].classList.add("ativo");
-  }
+  checarCardCentral();
 }
 
-// ESTA FUNÇÃO ESTAVA FALTANDO NO SEU ARQUIVO:
 function configurarCarrosselMarcas() {
   configurarCarrossel("marcas-faixa", "marcas-anterior", "marcas-proximo", 300);
 }
 
 function configurarCarrosselPublico() {
   configurarCarrossel("publico-faixa", "publico-anterior", "publico-proximo", function() {
-    const primeiroCard = document.querySelector("#publico-faixa .trinks__card");
+    const primeiroCard = document.querySelector("#publico-faixa .publico__card");
     if (primeiroCard) {
-      return primeiroCard.offsetWidth + 20; 
+      return primeiroCard.offsetWidth + 20;
     }
     return 310;
   });
-  
+
   configurarCarrosselDestaqueCentro();
 }
 
